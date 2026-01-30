@@ -1,27 +1,26 @@
 # trainETA.com
 
-Real-time NYC subway times powered by MTA GTFS-RT feeds. View live train positions across all lines and in single line station boards.
+Real-time NYC subway tracking using MTA GTFS-RT feeds. Live map for all lines plus per-line station boards.
 
 ## Demo
 
 - **Live site:** [traineta.com](https://traineta.com)
-- **Video walkthrough:** Coming soon
 
 ## Features
 
-- Live map showing all subway lines with real-time train positions
+- Live map of all subway lines with real-time train positions
 - Per-line station boards with arrival countdowns
-- Real-time updates 5s polling with intelligent caching
-- LIRR support with separate map view
+- 5s polling with caching
+- LIRR map view
 - Service alerts and outage tracking
-- Public API with rate limiting for developers
-- Admin dashboard for API key management
+- Public API + rate limiting
+- Admin dashboard for API keys
 
 ## Tech Stack
 
 - **Framework:** Next.js 16 (App Router) + TypeScript
 - **Styling:** Tailwind CSS + CSS Modules
-- **Data:** MTA GTFS-RT feeds (real-time transit data)
+- **Data:** MTA GTFS-RT feeds
 - **Parsing:** gtfs-realtime-bindings (Protocol Buffers)
 - **Testing:** Vitest (unit) + Playwright (E2E)
 
@@ -38,7 +37,6 @@ GTFS-RT Feeds → /api/transit/mta → cache + dedup → UI (map + line boards)
 - Timing-safe token comparison
 - Session-based admin auth
 - Rate limiting with TTL cleanup
-- Tiered API access
 
 ## Quick Start
 
@@ -221,8 +219,8 @@ python3 scripts/build-lirr-data.py --zip /path/to/google_transit.zip
 
 ## Notes
 
-- Metrics are in-memory and reset on cold start (serverless-compatible)
-- Rate limiting uses in-memory buckets with automatic cleanup (5min interval)
+- Metrics are in-memory and reset on cold start
+- Rate limiting uses in-memory buckets with cleanup (5 min interval)
 - API keys are stored in `data/api-keys.json`
 - Admin tokens use session storage (clears on tab close)
 
