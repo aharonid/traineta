@@ -179,29 +179,6 @@ npm run build
 npm start
 ```
 
-## Project Structure
-
-```
-src/
-├── app/                    # Next.js App Router pages
-│   ├── api/               # API routes
-│   │   ├── transit/       # Train position endpoints
-│   │   ├── admin/         # Admin API (key management)
-│   │   └── status/        # Health/status endpoints
-│   ├── subway-map/        # Map UI
-│   └── admin/             # Admin dashboard
-├── lib/
-│   ├── transit/           # Core transit logic
-│   │   ├── gtfs-utils.ts  # Shared GTFS-RT utilities
-│   │   ├── access.ts      # Rate limiting & auth
-│   │   ├── api-keys.ts    # Key management
-│   │   └── metrics.ts     # Metrics tracking
-│   └── data/              # Static stop/route data
-├── components/            # Shared UI components
-└── __tests__/             # Unit tests
-e2e/                       # Playwright E2E tests
-```
-
 ## Data Files
 
 Static data for mapping stop IDs to names/coordinates:
