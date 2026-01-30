@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+coverage
+.DS_Store
+*.log
+.vercel
+
+# Local env files (keep .env.example tracked)
+.env
+.env.*
+!.env.example
